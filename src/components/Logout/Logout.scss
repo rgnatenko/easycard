@@ -1,0 +1,13 @@
+.logout {
+  grid-column: 12/18;
+  @include flex-center-column;
+
+  @include text-body;
+  color: $text-primary;
+
+  &__btn {
+    background-color: $c-info;
+
+    @include hover(background-color, $c-info-hover);
+  }
+}

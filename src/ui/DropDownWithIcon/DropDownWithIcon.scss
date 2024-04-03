@@ -1,0 +1,31 @@
+.dropdownWithIcon {
+  @include flex-spb;
+  @include input-padding;
+  width: 100%;
+
+  @include border($input-border);
+  border-radius: $input-border-radius;
+
+  @include hover(background-color, $bg);
+
+  &__info {
+    @include flex-center;
+    gap: 8px;
+
+    &-text {
+      font-weight: 700;
+      color: $text-primary;
+    }
+
+    &-icon {
+      @include flex-center;
+      height: 30px;
+      width: 30px;
+      background-color: $c-accent;
+      border-radius: 4px;
+
+      @include hover(background-color, $c-warning-hover);
+      @include click(background-color, $c-warning-pressed);
+    }
+  }
+}

@@ -1,0 +1,12 @@
+.btnWithIcon {
+  @include flex-center;
+  @include input-padding;
+
+  @include text-body;
+  color: $c-white;
+
+  @include hover(background-color, $c-warning);
+
+  background-color: $c-accent;
+  border-radius: $input-border-radius;
+}

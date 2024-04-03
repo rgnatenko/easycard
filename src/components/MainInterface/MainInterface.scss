@@ -1,0 +1,10 @@
+.main {
+  grid-column: 6/-1;
+
+  @include flex-center-column;
+  justify-content: flex-start;
+  gap: 24px;
+  padding: 40px 32px;
+
+  background-color: $bg-yellow;
+}

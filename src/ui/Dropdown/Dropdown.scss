@@ -1,0 +1,8 @@
+.dropdown {
+  @include flex-spb;
+  @include input-padding;
+
+  background-color: $bg;
+
+  border-radius: $input-border-radius;
+}

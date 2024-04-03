@@ -1,0 +1,10 @@
+.location {
+  @include flex-center;
+  justify-content: flex-start;
+  gap: 24px;
+
+  padding: 20px;
+  width: 100%;
+
+  @include hover(background-color, $bg-grey-hover)
+}

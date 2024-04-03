@@ -1,0 +1,14 @@
+.board {
+  @include flex-center-column;
+  gap: 24px;
+  padding-block: 50px;
+  width: 100%;
+
+  background-color: $c-white;
+  border-radius: $input-border-radius;
+
+  &__head {
+    @include flex-center-column;
+    gap: 12px;
+  }
+}

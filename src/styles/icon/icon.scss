@@ -1,0 +1,64 @@
+.icon {
+  @include flex-center;
+  width: 24px;
+  height: 24px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  transition-duration: $effect-duration;
+  transition-property: background-image;
+
+  &--location {
+    background-image: url('./../../../public/location.svg');
+    width: 16px;
+    height: 16px;
+
+    &-grey {
+      background-image: url('./../../../public/location-grey.svg');
+    }
+  }
+
+  &--down {
+    background-image: url('./../../../public/down.svg');
+
+    width: 20px;
+    height: 20px;
+
+    &-grey {
+      background-image: url('./../../../public/down-grey.svg');
+    }
+  }
+
+  &--team {
+    background-image: url('./../../../public/team.svg');
+
+    &--active {
+      background-image: url('./../../../public/team-active.svg');
+    }
+  }
+
+  &--logout {
+    background-image: url('./../../../public/logout.svg');
+
+    &--active {
+      background-image: url('./../../../public/logout-active.svg');
+    }
+  }
+
+  &--eye {
+    background-image: url('./../../../public/eye.svg');
+
+    &-off {
+      background-image: url('./../../../public/eye-off.svg');
+    }
+  }
+
+  &--close {
+    background-image: url('./../../../public/close.svg');
+  }
+
+  &--clear {
+    background-image: url('./../../../public/clear.svg');
+  }
+}

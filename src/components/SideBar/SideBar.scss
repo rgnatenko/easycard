@@ -1,0 +1,29 @@
+.sidebar {
+  display: none;
+
+  @include onDesktop {
+    grid-column: span 5;
+    @include flex-spb-column;
+    padding: 20px;
+
+    border-right: 1px solid $input-border;
+  }
+
+  &__top {
+    @include flex-center-column;
+    justify-content: flex-start;
+    gap: 12px;
+    width: 100%;
+  }
+
+  &__divider {
+    border-bottom: 1px solid $input-border;
+    width: 100%;
+  }
+
+  &__user {
+    display: block;
+    width: 100%;
+    margin-bottom: 16px;
+  }
+}

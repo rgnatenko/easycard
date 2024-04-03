@@ -1,0 +1,23 @@
+.barItem {
+  @include flex-center;
+  gap: 16px;
+
+  width: 100%;
+
+  @include input-padding;
+
+  @include text-body;
+
+  color: $text-primary;
+
+  font-size: 20px;
+
+  border-radius: $input-border-radius;
+
+  @include hover(background-color, $bg-grey-hover);
+
+  &--active {
+    background-color: $bg-grey-hover;
+    font-weight: 700;
+  }
+}

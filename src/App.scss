@@ -1,0 +1,31 @@
+@import './styles/utils/vars.scss';
+@import './styles/utils/reset.scss';
+@import './styles/utils/mixins.scss';
+
+@import './styles/icon/icon.scss';
+@import './styles/text/text.scss';
+@import './styles/input/input.scss';
+
+@import './ui/DropDownWithIcon/DropDownWithIcon.scss';
+@import './ui/Dropdown/Dropdown.scss';
+@import './ui/BarItem/BarItem.scss';
+@import './ui/ButtonWithIcon/ButtonWithIcon.scss';
+@import './ui/Button/Button.scss';
+@import './ui/TextWithIcon/TextWithIcon.scss';
+@import './ui/Popup/Popup.scss';
+@import './ui/LocationPopupInfo/LocationPopupInfo.scss';
+@import './ui/LocationItem/LocationItem.scss';
+
+@import './components/SideBar/SideBar.scss';
+@import './components/Board/Board.scss';
+@import './components/TopBar/TopBar.scss';
+@import './components/MainInterface/MainInterface.scss';
+@import './components/AuthForm/AuthForm.scss';
+@import './components/Logout/Logout.scss';
+@import './components/LocationList/LocationList.scss';
+
+.App {
+  @include grid;
+
+  height: 100vh;
+}

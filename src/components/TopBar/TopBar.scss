@@ -1,0 +1,9 @@
+.top-bar {
+  @include flex-spb;
+  width: 100%;
+
+  &__head {
+    @include flex-center-column;
+    align-items: flex-start;
+  }
+}

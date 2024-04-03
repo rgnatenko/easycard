@@ -1,0 +1,9 @@
+.text-with-icon {
+  @include flex-spb;
+  width: 100%;
+
+  &--width70 {
+    @include flex-center;
+    width: 70%;
+  }
+}

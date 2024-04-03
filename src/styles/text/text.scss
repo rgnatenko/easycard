@@ -1,0 +1,36 @@
+h1,
+.h1 {
+  @include h1;
+}
+
+h2,
+.h2 {
+  @include h2;
+}
+
+h3,
+.h3 {
+  @include h3;
+}
+
+h4,
+.h4 {
+  @include h4;
+}
+
+.text {
+  @include text-body;
+
+  &-body {
+    @include text-body;
+  }
+
+  &-danger {
+    color: $c-danger;
+  }
+
+  &-warning {
+    color: $c-accent;
+    font-weight: 600;
+  }
+}

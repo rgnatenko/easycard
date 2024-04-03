@@ -1,0 +1,209 @@
+@mixin onTablet {
+  @media (min-width: $tablet-min-width) {
+    @content;
+  }
+}
+
+@mixin onDesktop {
+  @media (min-width: $desktop-min-width) {
+    @content;
+  }
+}
+
+@mixin paddingInline {
+  padding-inline: 32px;
+}
+
+@mixin hover($property, $toVAlue) {
+  transition-property: #{$property};
+  transition-duration: $effect-duration;
+
+  &:hover {
+    #{$property}: #{$toVAlue};
+  }
+}
+
+@mixin click($property, $toVAlue) {
+  transition: #{$property} $effect-duration;
+
+  &:visited {
+    #{$property}: #{$toVAlue};
+  }
+}
+
+@mixin h1 {
+  font-size: $h1-mobile;
+  font-weight: 800;
+  line-height: $lh100;
+  letter-spacing: -0.32px;
+  color: $text-primary;
+
+  @include onTablet() {
+    font-size: $h1;
+    line-height: $lh100;
+    letter-spacing: -0.48px;
+  }
+}
+
+@mixin h2 {
+  font-size: $h2-mobile;
+  font-weight: 800;
+  line-height: $lh140;
+  letter-spacing: -0.32px;
+  color: $text-primary;
+
+  @include onTablet() {
+    font-size: $h2;
+    line-height: $lh100;
+    letter-spacing: -0.48px;
+  }
+}
+
+@mixin h3 {
+  font-size: $h3-mobile;
+  font-weight: 800;
+  line-height: $lh100;
+  letter-spacing: -0.32px;
+  color: $text-primary;
+
+  @include onTablet() {
+    font-size: $h3;
+    line-height: $lh140;
+    letter-spacing: -0.48px;
+  }
+}
+
+@mixin h4 {
+  font-size: $h4-mobile;
+  font-weight: 800;
+  line-height: $lh100;
+  letter-spacing: -0.32px;
+  color: $text-primary;
+
+  @include onTablet() {
+    font-size: $h4;
+    line-height: $lh100;
+    letter-spacing: -0.48px;
+  }
+}
+
+@mixin text-body {
+  font-size: $text-body;
+  font-weight: 500;
+  line-height: $lh-body;
+  color: $text-secondary;
+}
+
+@mixin grid {
+  --columns: 4;
+  display: grid;
+  justify-content: center;
+  column-gap: 16px;
+  grid-template-columns: repeat(var(--columns), 1fr);
+
+  @include onTablet {
+    --columns: 12;
+  }
+
+  @include onDesktop {
+    --columns: 24;
+    column-gap: 0;
+  }
+}
+
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+}
+
+@mixin flex-center-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+}
+
+@mixin flex-spb {
+  @include flex-center;
+  justify-content: space-between;
+}
+
+@mixin flex-spb-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@mixin border($color) {
+  border: 1px solid #{$color};
+}
+
+@mixin input-padding {
+  padding: 12px 16px;
+}
+
+@mixin button-w-icon {
+  @include flex-center;
+  gap: 12px;
+
+  @include input-padding;
+
+  @include text-body;
+}
+
+@mixin button-primary {
+  @include flex-center;
+
+  @include input-padding;
+
+  @include text-body;
+
+  color: $c-white;
+
+  background-color: $c-accent;
+  border-radius: $input-border-radius;
+
+  @include hover(background-color, $c-warning);
+}
+
+@mixin button-secondary {
+  @include flex-center;
+
+  @include input-padding;
+
+  @include text-body;
+
+  color: $text-secondary;
+
+  @include border($input-border);
+  border-radius: $input-border-radius;
+
+  @include hover(border-color, $text-disabled);
+}
+
+@mixin input {
+  @include input-padding;
+
+  @include text-body;
+
+  color: $text-secondary;
+
+  &::placeholder {
+    color: $c-placeholders-grey;
+  }
+
+  background-color: $bg-input;
+
+  @include border($input-border);
+  border-radius: $input-border-radius;
+
+  @include hover(border-color, $text-disabled);
+
+  &:focus {
+    border-color: $text-primary;
+  }
+}

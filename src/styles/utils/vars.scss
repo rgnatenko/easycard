@@ -1,0 +1,70 @@
+// #device width
+$tablet-min-width: 640px;
+$desktop-min-width: 1200px;
+
+//  #colors
+//  #background
+$bg: #F2F3F5;
+$bg-card: #FAFAFA;
+$bg-input: #FBFDFF;
+$bg-notifications: #F8F8F8;
+$bg-grey-hover: #F3F6F9;
+$bg-yellow: #F6F5EE;
+//  #text
+$text-primary: #1E293B;
+$text-secondary: #636874;
+$text-hint: #7688AC;
+$text-disabled: #99A1B0;
+
+$c-white: #FFF;
+$c-accent: #FBBF24;
+
+$c-success: #039F76;
+$c-success-hover: #027F5E;
+$c-success-pressed: #025F47;
+$c-success-bg: #E2FFF2;
+
+$c-warning: #E2660C;
+$c-warning-hover: #B5520A;
+$c-warning-pressed: #883D07;
+$c-warning-bg: #FCF0E7;
+
+$c-info: #0390F4;
+$c-info-hover: #0273C3;
+$c-info-pressed: #025692;
+$c-info-bg: #E6F4FE;
+
+$c-danger: #DC5858;
+$c-danger-hover: #B24747;
+$c-danger-pressed: #883636;
+$c-danger-bg: #FBEEEE;
+// #border
+$input-border: #E3E4EC;
+$card-border: #FAFAFA;
+$card-focus-border: #E2DBF8;
+
+$c-placeholders-grey: #b3baca;
+
+// font-sizes
+$h1-mobile: 32px;
+$h2-mobile: 22px;
+$h3-mobile: 20px;
+$h4-mobile: 16px;
+
+$h1: 48px;
+$h2: 32px;
+$h3: 22px;
+$h4: 20px;
+
+$text-body: 14px;
+$text-small: 12px;
+$text-button: 14px;
+$text-uppercase: 12px;
+
+$lh140: 140%;
+$lh100: 100%;
+$lh-body: 150%;
+
+$input-border-radius: 6px;
+
+$effect-duration: 0.3s;
