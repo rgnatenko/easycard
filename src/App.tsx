@@ -4,7 +4,6 @@ import { SideBar } from './components/SideBar';
 import { Outlet, useNavigate } from 'react-router-dom';
 import { useUser } from './redux/selectors';
 import { useDataFromStorage } from './helpers/useDataFromStorage';
-import { MainInterface } from './components/MainInterface';
 
 const App = () => {
   const navigate = useNavigate();
