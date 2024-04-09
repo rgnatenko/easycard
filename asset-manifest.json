@@ -1,7 +1,10 @@
 {
   "files": {
-    "main.css": "./static/css/main.5830b34a.css",
-    "main.js": "./static/js/main.faf03596.js",
+    "main.css": "./static/css/main.2de275f8.css",
+    "main.js": "./static/js/main.4163f7cc.js",
+    "static/media/hint-hover.svg": "./static/media/hint-hover.b5314d743d599598207c.svg",
+    "static/media/hint.svg": "./static/media/hint.44d290b717884fbd2fd4.svg",
+    "static/media/flag.svg": "./static/media/flag.ce1032143a08cdd9807f.svg",
     "static/media/eye-off.svg": "./static/media/eye-off.009d4233d0804712f373.svg",
     "static/media/location.svg": "./static/media/location.a9c4f86c3dc53250d19f.svg",
     "static/media/location-grey.svg": "./static/media/location-grey.f09c14aa3bcf2860c46d.svg",
@@ -12,15 +15,20 @@
     "static/media/logout-active.svg": "./static/media/logout-active.25410ca2b069e9bd9530.svg",
     "static/media/logout.svg": "./static/media/logout.bd96e6132ed01e39ccb9.svg",
     "static/media/down.svg": "./static/media/down.125cd9a95d5156ed4170.svg",
+    "static/media/up.svg": "./static/media/up.ed6e20824ce44f8a9218.svg",
     "index.html": "./index.html",
+    "static/media/plus.svg": "./static/media/plus.7dc219b59443c0553f99.svg",
     "static/media/eye.svg": "./static/media/eye.d022f0a8e18bddc67c51.svg",
     "static/media/team-active.svg": "./static/media/team-active.f7d289d91e09ffc9ca23.svg",
     "static/media/team.svg": "./static/media/team.2aa5caee67348bccef79.svg",
-    "main.5830b34a.css.map": "./static/css/main.5830b34a.css.map",
-    "main.faf03596.js.map": "./static/js/main.faf03596.js.map"
+    "static/media/left.svg": "./static/media/left.3edcdd106b985c8c3a4a.svg",
+    "static/media/right.svg": "./static/media/right.ff326db2833308e5eaac.svg",
+    "static/media/check.svg": "./static/media/check.436b192463db50fedf4e.svg",
+    "main.2de275f8.css.map": "./static/css/main.2de275f8.css.map",
+    "main.4163f7cc.js.map": "./static/js/main.4163f7cc.js.map"
   },
   "entrypoints": [
-    "static/css/main.5830b34a.css",
-    "static/js/main.faf03596.js"
+    "static/css/main.2de275f8.css",
+    "static/js/main.4163f7cc.js"
   ]
 }
