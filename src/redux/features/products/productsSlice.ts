@@ -1,23 +1,32 @@
 import { PayloadAction, createSlice } from '@reduxjs/toolkit';
 import { useDataFromStorage } from '../../../helpers/useDataFromStorage';
-import { ProductsState } from '../../../types/ProductsState';
-import { Location } from '../../../types/Location';
+import { ProductsState } from '../../../types/State/ProductsState';
+import { Product } from '../../../types/Product';
 
 const initialState: ProductsState = {
   products: useDataFromStorage.getProducts(),
-  selectedLocation: null
+  selectedProduct: useDataFromStorage.getSelectedProduct(),
+  isfirstProduct: false
 };
 
 export const productsSlice = createSlice({
   name: 'products',
   initialState,
   reducers: {
-    setSelectedLocation: (state, action: PayloadAction<Location | null>) => {
-      state.selectedLocation = action.payload;
-    }
+    setSelectedProduct: (state, action: PayloadAction<Product>) => {
+      state.selectedProduct = action.payload;
+    },
+
+    setProducts: (state, action: PayloadAction<Product[]>) => {
+      state.products = action.payload;
+    },
+
+    setIsFirstProduct: (state, action: PayloadAction<boolean>) => {
+      state.isfirstProduct = action.payload;
+    },
   },
 });
 
-export const { setSelectedLocation } = productsSlice.actions;
+export const { setSelectedProduct, setProducts, setIsFirstProduct } = productsSlice.actions;
 
 export const productsReducer = productsSlice.reducer;

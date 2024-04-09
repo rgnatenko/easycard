@@ -1,0 +1,85 @@
+.card {
+  @include flex-center;
+  gap: 0;
+
+  @include text-body;
+  font-weight: 600;
+
+  &__avatar {
+    @include flex-center;
+    width: 40px;
+    height: 40px;
+
+    background-color: $c-info-bg;
+    border-radius: $input-border-radius;
+
+    @include text-body;
+    font-weight: 600;
+    color: $c-info;
+  }
+
+  &__owner-name {
+    font-weight: 600;
+  }
+
+  &__status {
+    @include flex-center;
+    padding: 6px 16px;
+
+    @include text-body;
+    font-weight: 600;
+
+    border-radius: $input-border-radius;
+
+    &--active {
+      color: $c-success;
+
+      background-color: $c-success-bg;
+    }
+
+    &--inactive {
+      color: $text-secondary;
+
+      background-color: $bg-grey-hover;
+    }
+  }
+
+  &__item {
+    @include flex-center;
+    justify-content: flex-start;
+    padding: 16px;
+
+    color: $text-secondary;
+
+    &--rank {
+      width: 10%;
+      justify-content: center;
+    }
+
+    &--name {
+      width: 40%;
+      gap: 8px;
+    }
+
+    &--target {
+      width: 60%;
+    }
+
+    &--status {
+      width: 30%;
+    }
+
+    &--scan {
+      width: 30%;
+    }
+
+    &--taps {
+      width: 10%;
+      justify-content: flex-end;
+    }
+
+    &--no-state {
+      color: $text-disabled;
+    }
+  }
+}

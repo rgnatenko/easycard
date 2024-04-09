@@ -1,0 +1,37 @@
+.products-list {
+  position: absolute;
+  top: 60%;
+  width: 100%;
+  max-height: 200px;
+  overflow-y: auto;
+
+  @include flex-center-column;
+  background-color: $c-white;
+
+  @include input-padding;
+  border-radius: $input-border-radius;
+  @include border($input-border);
+
+  transition-property: all;
+  transition-duration: $effect-duration;
+
+  &__item {
+    @include flex-center;
+    width: 100%;
+    padding-block: 10px;
+
+    @include text-body;
+    font-weight: 600;
+    color: $text-primary;
+
+    @include hover(background-color, $bg-grey-hover);
+
+    &--location {
+      color: $c-accent;
+
+      &:visited {
+        color: $c-accent;
+      }
+    }
+  }
+}

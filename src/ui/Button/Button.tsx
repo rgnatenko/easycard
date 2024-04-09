@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import React, { ReactNode } from 'react';
 import cn from 'classnames';
 
@@ -6,7 +7,7 @@ type Props = {
   btnType: 'secondary' | 'primary'
   type?: 'submit' | 'reset' | 'button',
   additionalClass?: string,
-  onClick?: () => void
+  onClick?: (arg: any) => void
 };
 
 export const Button: React.FC<Props> = ({

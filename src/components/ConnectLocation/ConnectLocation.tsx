@@ -4,9 +4,9 @@ import { ButtonWithIcon } from '../../ui/ButtonWithIcon';
 import { Link } from 'react-router-dom';
 
 export const ConnectLocation: React.FC = () => (
-  <div className="board">
-    <div className="board__head">
-      <img src="location.png" alt="" className="board__img" />
+  <div className="connect-board" >
+    <div className="connect-board__head">
+      <img src="location.png" alt="" />
 
       <h4>Connect your location</h4>
       <p className="text-body">
@@ -15,10 +15,10 @@ export const ConnectLocation: React.FC = () => (
     </div>
 
     <Link to="./connect-location">
-      <ButtonWithIcon iconClass="location" color="$c-accent">
+      <ButtonWithIcon iconClass="location">
         Connect Location
       </ButtonWithIcon>
     </Link>
-
   </div>
+
 );

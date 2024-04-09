@@ -1,26 +1,41 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { DropDownWithIcon } from '../../ui/DropDownWithIcon';
 import { BarItem } from '../../ui/BarItem';
-import { useUser } from '../../redux/selectors';
+import { useProducts, useUser } from '../../redux/selectors';
 import { getLocationName } from '../../helpers/getLocationName';
+import ProductsList from '../../ui/ProductsList/ProductsList';
 
 export const SideBar: React.FC = () => {
-
   const { user } = useUser();
-  const { locationName, userHasProducts } = getLocationName(user);
+  const { selectedProduct, products } = useProducts();
+  const locationName = getLocationName(selectedProduct);
+
+  const [isOpenList, setIsOpenList] = useState(false);
 
   return (
     <div className="sidebar">
       <div className="sidebar__top">
         <h4 className='sidebar__user'>{user?.fullName}</h4>
 
-        <DropDownWithIcon
-          iconClass="location"
-          iconDownIsNeeded={userHasProducts}
-          to='connect-location'
-        >
-          {locationName}
-        </DropDownWithIcon>
+        {!products.length ? (
+          <DropDownWithIcon
+            iconClass="location"
+            to="team/connect-location"
+          >
+            {locationName}
+          </DropDownWithIcon>
+        ) : (
+          <DropDownWithIcon
+            iconClass="location"
+            iconDownIsNeeded
+            onClick={() => setIsOpenList(!isOpenList)}
+          >
+            {locationName}
+          </DropDownWithIcon>
+        )}
+
+
+        {isOpenList && <ProductsList products={products} />}
 
         <div className="sidebar__divider" />
 

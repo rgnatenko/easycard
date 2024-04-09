@@ -1,7 +1,7 @@
 export interface Card {
   ownerName: string,
   productId: number,
-  status: string,
+  status: boolean,
   scanDate: string,
   taps: number
 }

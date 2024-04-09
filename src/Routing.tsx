@@ -6,8 +6,7 @@ import { Provider } from 'react-redux';
 import store from './redux/store/store';
 import { AuthForm } from './components/AuthForm';
 import { Logout } from './components/Logout';
-import { Popup } from './ui/Popup';
-import { LocationPopupInfo } from './ui/LocationPopupInfo';
+import LocationPopup from './components/LocationPopup/LocationPopup';
 
 export const Routing: React.FC = () => (
   <Router>
@@ -21,9 +20,7 @@ export const Routing: React.FC = () => (
       }>
         <Route path="team">
           <Route index element={<MainInterface />} />
-          <Route path='connect-location' element={<Popup>
-            <LocationPopupInfo />
-          </Popup>} />
+          <Route path='connect-location' element={<LocationPopup />} />
         </Route>
         <Route path="logout" element={<Logout />} />
       </Route>

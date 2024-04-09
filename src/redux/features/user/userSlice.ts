@@ -1,5 +1,5 @@
 import { PayloadAction, createSlice } from '@reduxjs/toolkit';
-import { UserState } from '../../../types/UserState';
+import { UserState } from '../../../types/State/UserState';
 import { User } from '../../../types/User';
 import { useDataFromStorage } from '../../../helpers/useDataFromStorage';
 

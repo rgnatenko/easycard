@@ -2,16 +2,26 @@ import React, { ReactNode } from 'react';
 import { Link } from 'react-router-dom';
 
 type Props = {
-  iconClass: string
+  iconClass?: string
   children: ReactNode
-  iconDownIsNeeded?: boolean
+  iconDownIsNeeded?: boolean,
+  onClick?: () => void
   to?: string
 };
 
-export const DropDownWithIcon: React.FC<Props> = ({ iconClass, children, iconDownIsNeeded, to }) => {
+export const DropDownWithIcon: React.FC<Props> = ({
+  iconClass,
+  children,
+  iconDownIsNeeded,
+  to,
+  onClick
+}) => {
   if (to) {
     return (
-      <Link to={to} className="dropdownWithIcon">
+      <Link
+        to={to}
+        className="dropdownWithIcon"
+      >
         <div className="dropdownWithIcon__info">
           <div className="dropdownWithIcon__info-icon icon">
             <div className={`icon icon--${iconClass}`} />
@@ -26,7 +36,10 @@ export const DropDownWithIcon: React.FC<Props> = ({ iconClass, children, iconDow
   }
 
   return (
-    <button className="dropdownWithIcon">
+    <button
+      className="dropdownWithIcon"
+      onClick={onClick}
+    >
       <div className="dropdownWithIcon__info">
         <div className="dropdownWithIcon__info-icon icon">
           <div className={`icon icon--${iconClass}`} />

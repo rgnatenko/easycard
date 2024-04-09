@@ -1,0 +1,14 @@
+.successfull-popup {
+  &__hint {
+    position: absolute;
+    top: 10%;
+    left: 20%;
+
+    @include flex-center-column;
+    width: 207px;
+  }
+
+  &__btn {
+    width: 100%;
+  }
+}

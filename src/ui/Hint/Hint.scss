@@ -1,0 +1,11 @@
+.hint {
+  padding: 10px;
+
+  @include text-body;
+  font-size: 12px;
+  white-space: pre-wrap;
+
+  background-color: $c-white;
+  box-shadow: 0 2px 66px -10px rgba(0,0,0,.06);
+  border-radius: $input-border-radius;
+}

@@ -1,10 +1,5 @@
-import { User } from '../types/User';
+import { Product } from '../types/Product';
 
-export const getLocationName = (user: User | null) => {
-  const userHasProducts = user !== null && user.products.length > 0 || false;
-  const locationName = userHasProducts
-    ? user?.products[0].location.name as string
-    : 'Connect Location';
-
-  return { locationName, userHasProducts };
+export const getLocationName = (product: Product | null) => {
+  return product ? product.location.name : 'Connect Location';
 };

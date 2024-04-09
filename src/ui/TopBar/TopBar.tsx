@@ -1,6 +1,10 @@
 import React from 'react';
+import ChallengeBar from '../ChallengeBar/ChallengeBar';
+import { useProducts } from '../../redux/selectors';
 
 export const TopBar: React.FC = () => {
+  const { products } = useProducts();
+
   return (
     <div className="top-bar">
       <div className="top-bar__head">
@@ -9,6 +13,8 @@ export const TopBar: React.FC = () => {
           Overview of all your Products
         </p>
       </div>
+
+      {products.length > 0 && <ChallengeBar />}
     </div>
   );
 };

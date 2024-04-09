@@ -1,11 +1,15 @@
 .board {
   @include flex-center-column;
-  gap: 24px;
-  padding-block: 50px;
   width: 100%;
 
   background-color: $c-white;
   border-radius: $input-border-radius;
+}
+
+.connect-board {
+  padding-block: 50px;
+  @include flex-center-column;
+  gap: 24px;
 
   &__head {
     @include flex-center-column;

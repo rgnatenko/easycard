@@ -61,4 +61,40 @@
   &--clear {
     background-image: url('./../../../public/clear.svg');
   }
+
+  &--hint {
+    background-image: url('./../../../public/hint.svg');
+
+    &:hover {
+      background-image: url('./../../../public/hint-hover.svg');
+    }
+  }
+
+  &--up {
+    background-image: url('./../../../public/up.svg');
+  }
+
+  &--flag {
+    background-image: url('./../../../public/flag.svg');
+  }
+
+  &--plus {
+    background-image: url('./../../../public/plus.svg');
+  }
+
+  &--left {
+    background-image: url('./../../../public/left.svg');
+
+    cursor: pointer;
+  }
+
+  &--right {
+    background-image: url('./../../../public/right.svg');
+
+    cursor: pointer;
+  }
+
+  &--check {
+    background-image: url('./../../../public/check.svg');
+  }
 }

@@ -168,6 +168,8 @@
   border-radius: $input-border-radius;
 
   @include hover(background-color, $c-warning);
+
+  cursor: pointer;
 }
 
 @mixin button-secondary {

@@ -1,0 +1,35 @@
+.leader-board {
+  @include flex-center-column;
+  gap: 24px;
+  width: 100%;
+  max-height: 570px;
+  padding: 24px;
+
+  &__header {
+    @include flex-spb;
+    width: 100%;
+  }
+
+  &__info {
+    @include flex-center-column;
+    align-items: flex-start;
+    gap: 0;
+  }
+
+  &__products-count {
+    color: $text-disabled;
+  }
+
+  &__footer {
+    @include flex-spb;
+    width: 100%;
+  }
+
+  &__connect-area {
+    @include flex-center;
+  }
+
+  &__pagination {
+    @include flex-center;
+  }
+}

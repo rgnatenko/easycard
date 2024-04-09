@@ -1,0 +1,40 @@
+.head {
+  &__row {
+    @include flex-center;
+    gap: 0;
+  }
+
+  &__column {
+    @include flex-center;
+    justify-content: flex-start;
+    padding: 16px;
+
+    @include text-body;
+    font-weight: 600;
+
+    &--rank {
+      width: 10%;
+      justify-content: center;
+    }
+
+    &--name {
+      width: 40%;
+    }
+
+    &--target {
+      width: 60%;
+    }
+
+    &--status {
+      width: 30%;
+    }
+
+    &--scan {
+      width: 30%;
+    }
+
+    &--taps {
+      width: 10%;
+    }
+  }
+}

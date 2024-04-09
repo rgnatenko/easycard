@@ -1,10 +1,6 @@
 import React from 'react';
-import { UseFormRegister } from 'react-hook-form';
-import { UserInputs } from '../../types/UserInputs';
-import { FieldNames } from '../../types/FieldNames';
-import { BusinessName } from '../../types/BusinessName';
-
-type Register = UseFormRegister<UserInputs | BusinessName>;
+import { FieldNames } from '../../types/State/FieldNames';
+import { Register } from '../../types/Reqister';
 
 type Props = {
   classToAdd?: string,
@@ -13,6 +9,7 @@ type Props = {
   value?: string,
   name: FieldNames
   type?: string,
+  required?: boolean
 }
 
 export const Input: React.FC<Props> = ({
@@ -21,15 +18,17 @@ export const Input: React.FC<Props> = ({
   placeholder,
   value,
   name,
-  type
+  type,
+  required = false
 }) => {
   return (
     <input
       className={`input ${classToAdd}`}
       placeholder={placeholder}
-      {...register(name, { required: true })}
+      {...register(name, { required })}
       value={value}
       type={type}
+      autoComplete="off"
     />
   );
 };

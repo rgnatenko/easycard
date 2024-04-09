@@ -1,38 +1,65 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
+import cn from 'classnames';
 import { TextWithIcon } from '../TextWithIcon';
-import { useForm } from 'react-hook-form';
-import { BusinessName } from '../../types/BusinessName';
-import { Input } from '../Input';
 import { Button } from '../Button';
-import fetchLocation from '../../fetchLocation/fetchLocation';
-import { Location } from '../../types/Location';
-import { LocationList } from '../../components/LocationList';
-import { useProducts } from '../../redux/selectors';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { InputArea } from './InputArea';
+import { useLocations, useProducts } from '../../redux/selectors';
+import { generateNewLocation } from '../../helpers/generateNewLocation';
+import { Product } from '../../types/Product';
+import { useAppDispatch } from '../../redux/hooks';
+import { setIsFirstProduct, setProducts, setSelectedProduct } from '../../redux/features/products';
+import { useDataFromStorage } from '../../helpers/useDataFromStorage';
+import { setCustomName, setError, setSelectedLocation } from '../../redux/features/locations';
+import { setCards } from '../../redux/features/cards';
 
 export const LocationPopupInfo: React.FC = () => {
-  const { register, watch, setValue } = useForm<BusinessName>();
-  const nameToSet = watch('businessName');
+  const [sectionIsOpened, setSectionIsOpened] = useState(false);
+  const openCustomNameField = () => setSectionIsOpened(!sectionIsOpened);
+  const hintText = 'Enter name of your business and we will generate id and review link on our own.';
 
-  const [locations, setLocations] = useState<Location[]>([]);
+  const { selectedLocation, customName } = useLocations();
+  const { products } = useProducts();
+  const dispatch = useAppDispatch();
 
-  const { selectedLocation } = useProducts();
+  const navigate = useNavigate();
 
-  useEffect(() => {
-    if (nameToSet) {
-      fetchLocation(nameToSet)
-        .then(locations => setLocations(locations));
+  const connect = () => {
+    if (selectedLocation && customName) {
+      dispatch(setError('Seems you\'ve chosen custom and real location, for creating product, please, choose one'));
+
+      return;
     }
-  }, [nameToSet]);
 
-  useEffect(() => {
-    if (selectedLocation) {
-      setValue('businessName', selectedLocation.name);
-      setLocations([]);
+    if (selectedLocation || customName) {
+      if (!products.length) {
+        dispatch(setIsFirstProduct(true));
+      }
+
+      const location = selectedLocation || generateNewLocation(customName);
+
+      const newProduct: Product = {
+        location,
+        id: location.place_id,
+        cards: []
+      };
+
+      useDataFromStorage.addProduct(newProduct);
+      dispatch(setSelectedProduct(newProduct));
+      dispatch(setProducts([...products, newProduct]));
+
+      dispatch(setCards(newProduct.cards));
+
+      dispatch(setSelectedLocation(null));
+      dispatch(setCustomName(''));
+
+      navigate('./../');
+
+      return;
     }
-  }, [selectedLocation]);
 
-  const handleClear = () => setValue('businessName', '');
+    dispatch(setError('Can\'t connect your business without it\'s name, please provide it'));
+  };
 
   return (
     <div className="location-popup">
@@ -44,39 +71,44 @@ export const LocationPopupInfo: React.FC = () => {
         Connect Location
       </TextWithIcon>
 
-      <div className="location-popup__input-area">
-        <p className="text-body">
-          Find your business by typing it’s name
-        </p>
+      <InputArea
+        nameToSet='businessName'
+        label="Find your business by typing it’s name"
+        placeholder="Start typing your business name"
+      />
 
-        <div className="location-popup__input-wrapper">
-          <Input
-            classToAdd="location-popup__input"
-            register={register}
-            name="businessName"
-            placeholder="Start typing your business name"
-          />
-
-          {nameToSet && <button
-            className="icon icon--clear  location-popup__clear-icon"
-            onClick={handleClear}
-          />
-          }
-
-          {locations.length > 0 && nameToSet
-            && <LocationList locations={locations} />}
-        </div>
-      </div>
-
-      <TextWithIcon iconClass="down" classToAdd='text-with-icon--width70'>
-        <button className="text-warning">
+      <TextWithIcon
+        iconClass={cn({
+          'down': !sectionIsOpened,
+          'up': sectionIsOpened
+        })}
+        classToAdd='text-with-icon--width70'
+      >
+        <button
+          className="text-warning"
+          onClick={openCustomNameField}
+        >
           Can’t find your business in the list? Click here
         </button>
       </TextWithIcon>
 
+      {sectionIsOpened &&
+        <InputArea
+          nameToSet='customName'
+          label="Type your business name"
+          placeholder="e.g. https://g.page/yourbusiness/review"
+          hint
+          hintText={hintText}
+        />}
+
       <div className="location-popup__buttons">
-        <Link to="./../" className="secondary-button" >Cancel</Link>
-        <Button type="submit" btnType="primary">Connect</Button>
+        <Link to="./../" className="secondary-button">
+          Cancel
+        </Link>
+
+        <Button type="submit" btnType="primary" onClick={connect}>
+          Connect
+        </Button>
       </div>
     </div>
   );

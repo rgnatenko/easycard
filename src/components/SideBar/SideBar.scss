@@ -10,6 +10,7 @@
   }
 
   &__top {
+    position: relative;
     @include flex-center-column;
     justify-content: flex-start;
     gap: 12px;

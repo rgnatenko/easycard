@@ -25,6 +25,11 @@ h4,
     @include text-body;
   }
 
+  &-secondary {
+    font-size: 12px;
+    color: $text-disabled;
+  }
+
   &-danger {
     color: $c-danger;
   }

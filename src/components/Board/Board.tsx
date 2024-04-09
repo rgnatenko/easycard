@@ -1,19 +1,22 @@
 import React from 'react';
 import { ConnectLocation } from '../ConnectLocation';
-import { useUser } from '../../redux/selectors';
-import { getLocationName } from '../../helpers/getLocationName';
+import { useProducts } from '../../redux/selectors';
+import LeaderBoard from '../../ui/LeaderBoard/LeaderBoard';
 
 export const Board: React.FC = () => {
-  const { user } = useUser();
-  const { userHasProducts } = getLocationName(user);
+  const { products } = useProducts();
 
-  if (!userHasProducts) {
+  if (!products.length) {
     return (
-      <ConnectLocation />
+      <div className="board">
+        <ConnectLocation />
+      </div>
     );
   }
 
   return (
-    <div className=""></div>
+    <div className="board">
+      <LeaderBoard />
+    </div>
   );
 };

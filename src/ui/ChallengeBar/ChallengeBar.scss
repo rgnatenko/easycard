@@ -1,0 +1,12 @@
+.challenge-bar {
+  @include flex-center;
+  padding: 16px;
+
+  background-color: $c-warning-bg;
+  @include border($c-accent);
+  border-radius: $input-border-radius;
+
+  &__text {
+    width: 495px;
+  }
+}

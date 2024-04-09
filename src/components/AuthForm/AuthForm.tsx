@@ -8,7 +8,7 @@ import { useDataFromStorage } from '../../helpers/useDataFromStorage';
 import { Button } from '../../ui/Button';
 import { useNavigate } from 'react-router-dom';
 import { setUser } from '../../redux/features/user';
-import { UserInputs } from '../../types/UserInputs';
+import { UserInputs } from '../../types/FieldValues/UserInputs';
 import { Input } from '../../ui/Input';
 
 export const AuthForm: React.FC = () => {
@@ -25,7 +25,7 @@ export const AuthForm: React.FC = () => {
     const user: User = { ...data, products: [] };
 
     dispatch(setUser(user));
-    useDataFromStorage.createUser(user);
+    useDataFromStorage.setUser(user);
     useDataFromStorage.setIsAuthorized(true);
 
     navigate('/');
@@ -41,6 +41,7 @@ export const AuthForm: React.FC = () => {
             name="fullName"
             placeholder='Full Name'
             value={userFromStorage?.fullName}
+            required
           />
 
           {errors.fullName && <p className="text-danger" >Full name is required</p>}
@@ -53,6 +54,7 @@ export const AuthForm: React.FC = () => {
               placeholder='Password'
               type={!openedPassword ? 'password' : 'text'}
               value={userFromStorage?.password}
+              required
             />
 
             <button

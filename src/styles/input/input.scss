@@ -1,3 +1,38 @@
 .input {
   @include input;
 }
+
+.input-radio {
+  @include input;
+  @include flex-center;
+  gap: 0;
+  padding: 0;
+  width: 20px;
+  height: 20px;
+
+  @include border($text-disabled);
+  @include hover(border-color, $text-secondary);
+  border-radius: 100%;
+
+  cursor: pointer;
+
+  &:checked {
+    @include border($c-accent);
+
+    &::after {
+      content: "";
+      line-height: 0;
+      @include flex-center;
+      width: 12px;
+      height: 12px;
+      background-color: $c-accent;
+      border-radius: 100%;
+    }
+  }
+}
+
+.button-radio {
+  @include flex-center;
+
+  cursor: pointer;
+}
