@@ -84,6 +84,9 @@ const updateCard = (updatedCards: Card[]) => {
   }
 };
 
+const getChallengeStatus = () => getDataFromStorage<boolean, boolean>('challengeStatus', false);
+const setChallengeStatus = (status: boolean) => setDataToStorage('challengeStatus', status);
+
 export const useDataFromStorage = {
   getUser,
   setUser,
@@ -96,5 +99,7 @@ export const useDataFromStorage = {
   addProduct,
   getCards,
   addCard,
-  updateCard
+  updateCard,
+  getChallengeStatus,
+  setChallengeStatus
 };

@@ -96,5 +96,13 @@
 
   &--check {
     background-image: url('./../../../public/check.svg');
+
+    &-success {
+      background-image: url('./../../../public/check-success.svg');
+    }
+  }
+
+  &--warning {
+    background-image: url('./../../../public/warning.svg');
   }
 }

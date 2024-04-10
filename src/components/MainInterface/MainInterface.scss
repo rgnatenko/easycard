@@ -1,5 +1,6 @@
 .main {
-  grid-column: 6/-1;
+  position: relative;
+  grid-column: span 4;
   height: 100%;
 
   @include flex-center-column;
@@ -8,4 +9,12 @@
   padding: 40px 32px;
 
   background-color: $bg-yellow;
+
+  @include onTablet {
+    grid-column: span 12;
+  }
+
+  @include onDesktop {
+    grid-column: 6/-1;
+  }
 }

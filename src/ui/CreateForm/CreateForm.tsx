@@ -8,7 +8,7 @@ import { ButtonWithIcon } from '../ButtonWithIcon';
 import { useAppDispatch } from '../../redux/hooks';
 import { useDataFromStorage } from '../../helpers/useDataFromStorage';
 import { generateCard } from '../../helpers/generateCard';
-import { setCardFormIsOpened, setCards, setSelectedCard } from '../../redux/features/cards';
+import { setCardFormIsOpened, setCards, setIsFirstAdded, setSelectedCard } from '../../redux/features/cards';
 import { Card } from '../../types/Card';
 import { cardInState } from '../../helpers/cardInState';
 import { RadioButton } from '../RadioButton/RadioButton';
@@ -36,6 +36,12 @@ const CreateForm: React.FC<Props> = ({ card }) => {
 
   const connectCard: SubmitHandler<CardInfo> = (data) => {
     if (selectedProduct) {
+      if (!cards.length && products.length === 1) {
+        dispatch(setIsFirstAdded(true));
+
+        setTimeout(() => dispatch(setIsFirstAdded(false)), 3000);
+      }
+
       if (card) {
         const updatedCard: Card = { ...card, ownerName, status: isActive };
 

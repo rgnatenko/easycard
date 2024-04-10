@@ -20,11 +20,13 @@ const LeaderBoardFooter: React.FC = () => {
 
   return (
     <div className="leader-board__footer">
-      <div className="leader-board__connect-area">
-        <ButtonWithIcon iconClass="plus" onClick={openCardForm}>
-          Connect Card
-        </ButtonWithIcon>
-      </div>
+      <ButtonWithIcon
+        iconClass="plus"
+        onClick={openCardForm}
+        additionalClass="leader-board__connect-btn"
+      >
+        Connect Card
+      </ButtonWithIcon>
 
       <Pagination
         pageCount={pageCount}

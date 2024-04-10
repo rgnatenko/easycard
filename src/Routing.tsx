@@ -7,6 +7,7 @@ import store from './redux/store/store';
 import { AuthForm } from './components/AuthForm';
 import { Logout } from './components/Logout';
 import LocationPopup from './components/LocationPopup/LocationPopup';
+import { ChallengePopup } from './components/ChallengePopup/ChallengePopup';
 
 export const Routing: React.FC = () => (
   <Router>
@@ -18,9 +19,9 @@ export const Routing: React.FC = () => (
           <App />
         </Provider>
       }>
-        <Route path="team">
-          <Route index element={<MainInterface />} />
+        <Route path="team" element={<MainInterface />}>
           <Route path='connect-location' element={<LocationPopup />} />
+          <Route path="start-challenge" element={<ChallengePopup />} />
         </Route>
         <Route path="logout" element={<Logout />} />
       </Route>

@@ -6,11 +6,13 @@ import { useDataFromStorage } from '../../../helpers/useDataFromStorage';
 const initialState: CardsState = {
   cards: useDataFromStorage.getCards(),
   cardFormIsOpened: false,
-  selectedCard: null
+  selectedCard: null,
+  query: '',
+  isFirstAdded: false
 };
 
 export const cardsSlice = createSlice({
-  name: 'locations',
+  name: 'cards',
   initialState,
   reducers: {
     setCards: (state, action: PayloadAction<Card[]>) => {
@@ -24,9 +26,23 @@ export const cardsSlice = createSlice({
     setSelectedCard: (state, action: PayloadAction<Card | null>) => {
       state.selectedCard = action.payload;
     },
+
+    setQuery: (state, action: PayloadAction<string>) => {
+      state.query = action.payload;
+    },
+
+    setIsFirstAdded: (state, action: PayloadAction<boolean>) => {
+      state.isFirstAdded = action.payload;
+    },
   }
 });
 
-export const { setCards, setCardFormIsOpened, setSelectedCard } = cardsSlice.actions;
+export const {
+  setCards,
+  setCardFormIsOpened,
+  setSelectedCard,
+  setQuery,
+  setIsFirstAdded
+} = cardsSlice.actions;
 
 export const cardsReducer = cardsSlice.reducer;

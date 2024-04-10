@@ -1,4 +1,5 @@
 .challenge-bar {
+  position: relative;
   @include flex-center;
   padding: 16px;
 
@@ -6,7 +7,100 @@
   @include border($c-accent);
   border-radius: $input-border-radius;
 
+  &--challenge-started {
+    @include flex-center-column;
+    width: 50%;
+  }
+
   &__text {
     width: 495px;
+  }
+
+  &__top {
+    @include flex-spb;
+    width: 100%;
+  }
+
+  &__bottom {
+    @include flex-spb;
+    width: 100%;
+  }
+
+  &__status-bar {
+    width: 90%;
+    height: 10px;
+
+    @include border($c-accent);
+    border-radius: $input-border-radius;
+
+    &::after {
+      content: "";
+      display: block;
+      height: 100%;
+      width: 40%;
+
+      border-radius: $input-border-radius;
+      background-color: $c-accent;
+    }
+
+    &--10 {
+      &::after {
+        width: 10%;
+      }
+    }
+
+    &--20 {
+      &::after {
+        width: 20%;
+      }
+    }
+
+    &--30 {
+      &::after {
+        width: 30%;
+      }
+    }
+
+    &--40 {
+      &::after {
+        width: 40%;
+      }
+    }
+
+    &--50 {
+      &::after {
+        width: 50%;
+      }
+    }
+
+    &--60 {
+      &::after {
+        width: 60%;
+      }
+    }
+
+    &--70 {
+      &::after {
+        width: 70%;
+      }
+    }
+
+    &--80 {
+      &::after {
+        width: 80%;
+      }
+    }
+
+    &--90 {
+      &::after {
+        width: 90%;
+      }
+    }
+
+    &--100 {
+      &::after {
+        width: 100%;
+      }
+    }
   }
 }

@@ -1,9 +1,4 @@
 .body {
-  &__tr {
-    @include flex-center;
-    gap: 0
-  }
-
   &__card {
     width: 100%;
   }

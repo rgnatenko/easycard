@@ -4,6 +4,7 @@ import { productsReducer } from '../features/products';
 import { locationsReducer } from '../features/locations';
 import { cardsReducer } from '../features/cards';
 import { paginationReducer } from '../features/pagination';
+import { challengeReducer } from '../features/challenge';
 
 const store = configureStore({
   reducer: {
@@ -11,7 +12,8 @@ const store = configureStore({
     products: productsReducer,
     locations: locationsReducer,
     cards: cardsReducer,
-    pagination: paginationReducer
+    pagination: paginationReducer,
+    challenge: challengeReducer,
   }
 });
 

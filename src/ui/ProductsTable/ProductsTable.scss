@@ -10,8 +10,14 @@
     width: 100%;
   }
 
+  &__head {
+    display: block;
+    width: 100%;
+  }
+
   &__body {
     display: block;
+    width: 100%;
     max-height: 300px;
     overflow-y: auto;
   }

@@ -1,0 +1,40 @@
+.toast {
+  position: absolute;
+  right: 0;
+  top: 10px;
+
+  width: 343px;
+
+  @include flex-center;
+  padding: 12px;
+  border-radius: $input-border-radius;
+
+  transition-property: opacity;
+  transition-duration: $effect-duration;
+
+  &__message {
+    display: block;
+    max-width: 250px;
+    color: $text-primary;
+  }
+
+  &--visible {
+    .toast-container {
+      position: fixed;
+      top: 20px;
+      right: -300px;
+      z-index: 9999;
+      transition: right 0.3s ease;
+    }
+  }
+
+  &--successfull {
+    background-color: $c-success-bg;
+    @include border($c-success);
+  }
+
+  &--warning {
+    background-color: $c-danger-bg;
+    @include border($c-danger);
+  }
+}

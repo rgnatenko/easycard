@@ -1,5 +1,5 @@
 import React from 'react';
-import { FieldNames } from '../../types/State/FieldNames';
+import { FieldNames } from '../../types/FieldNames';
 import { Register } from '../../types/Reqister';
 
 type Props = {

@@ -1,7 +1,12 @@
 .head {
   &__row {
     @include flex-center;
+    justify-content: flex-start;
     gap: 0;
+
+    @include onDesktop {
+      justify-content: center;
+    }
   }
 
   &__column {

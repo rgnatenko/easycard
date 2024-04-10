@@ -4,12 +4,13 @@ import CardItem from '../CardItem/CardItem';
 import CreateForm from '../../CreateForm/CreateForm';
 
 export const TableBody: React.FC = () => {
-  const { cards, cardFormIsOpened, selectedCard } = useCards();
+  const { cards, cardFormIsOpened, selectedCard, query } = useCards();
 
   const { currentPage, itemsPerPage } = usePagination();
 
-  const cardsOnPage = useCardsOnThePage({ currentPage, itemsPerPage, cards });
+  const cardsOnPage = useCardsOnThePage({ currentPage, itemsPerPage, cards, query });
 
+  console.log(query);
 
   if (cardFormIsOpened) {
     return (
