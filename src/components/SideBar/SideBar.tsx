@@ -31,7 +31,7 @@ export const SideBar: React.FC<Props> = ({ visible }) => {
         {!products.length ? (
           <DropDownWithIcon
             iconClass="location"
-            to="team/connect-location"
+            to="/team/connect-location"
           >
             {locationName}
           </DropDownWithIcon>
