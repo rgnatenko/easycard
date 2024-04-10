@@ -1,6 +1,7 @@
 import React from 'react';
 import ChallengeBar from '../ChallengeBar/ChallengeBar';
 import { useProducts } from '../../redux/selectors';
+import { Link } from 'react-router-dom';
 
 export const TopBar: React.FC = () => {
   const { products } = useProducts();
@@ -8,10 +9,14 @@ export const TopBar: React.FC = () => {
   return (
     <div className="top-bar">
       <div className="top-bar__head">
-        <h2>Team</h2>
-        <p className="text-body">
-          Overview of all your Products
-        </p>
+        <Link to="./../menu" className="icon icon--menu top-bar__menu" />
+
+        <div className="top-bar__head-text">
+          <h2>Team</h2>
+          <p className="text-body">
+            Overview of all your Products
+          </p>
+        </div>
       </div>
 
       {products.length > 0 && <ChallengeBar />}

@@ -2,10 +2,10 @@
   &__row {
     @include flex-center;
     justify-content: flex-start;
+    width: 100%;
     gap: 0;
 
     @include onDesktop {
-      justify-content: center;
     }
   }
 
@@ -18,28 +18,44 @@
     font-weight: 600;
 
     &--rank {
-      width: 10%;
       justify-content: center;
+
+      width: 10%;
+      @include onDesktop {
+      }
     }
 
     &--name {
-      width: 40%;
+      width: 60%;
+      @include onDesktop {
+        width: 40%;
+      }
     }
 
     &--target {
-      width: 60%;
+      width: 30%;
+      @include onDesktop {
+        width: 60%;
+      }
     }
 
     &--status {
       width: 30%;
+      @include onDesktop {
+      }
     }
 
     &--scan {
       width: 30%;
+      @include onDesktop {
+      }
     }
 
     &--taps {
       width: 10%;
+      justify-content: flex-end;
+      @include onDesktop {
+      }
     }
   }
 }

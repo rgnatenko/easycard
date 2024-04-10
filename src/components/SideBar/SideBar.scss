@@ -1,5 +1,6 @@
 .sidebar {
   display: none;
+  background-color: $c-white;
 
   @include onDesktop {
     grid-column: span 5;
@@ -7,6 +8,13 @@
     padding: 20px;
 
     border-right: 1px solid $input-border;
+  }
+
+  &--opened-on-mobile {
+    @include flex-spb-column;
+    grid-column: span 4;
+    width: 100%;
+    padding: 50px;
   }
 
   &__top {
@@ -26,5 +34,15 @@
     display: block;
     width: 100%;
     margin-bottom: 16px;
+  }
+
+  &__back-link {
+    position: absolute;
+    right: 0;
+    top: 0;
+
+    @include onDesktop {
+      display: none;
+    }
   }
 }

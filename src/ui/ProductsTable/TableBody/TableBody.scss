@@ -1,5 +1,9 @@
 .body {
   &__card {
-    width: 100%;
+    width: 600px;
+
+    @include onDesktop {
+      width: 100%;
+    }
   }
 }

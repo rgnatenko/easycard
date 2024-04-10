@@ -2,7 +2,7 @@
   @include flex-center-column;
   gap: 24px;
   width: 100%;
-  max-height: 570px;
+  max-height: 650px;
   padding: 24px;
 
   &__header {
@@ -11,7 +11,8 @@
 
     @include onDesktop {
       @include flex-spb;
-      flex-direction: row
+      flex-direction: row;
+      max-height: 570px;
     }
   }
 
@@ -44,7 +45,6 @@
 
   &__products-table {
     display: block;
-    max-width: 300px;
     overflow-x: auto;
 
     @include onDesktop {
@@ -57,10 +57,13 @@
   }
 
   &__connect-btn {
-    padding: 10px 12px;
+    padding: 8px 10px;
+    gap: 0;
+
+    font-size: 0px;
 
     @include onDesktop {
-      @include input-padding;
+      @include button-primary;
     }
   }
 }

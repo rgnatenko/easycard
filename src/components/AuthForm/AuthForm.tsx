@@ -73,6 +73,7 @@ export const AuthForm: React.FC = () => {
         <Button
           btnType="primary"
           type="submit"
+          additionalClass='authform__btn'
         >
           {userFromStorage ? 'Log in' : 'Sign up'}
         </Button>

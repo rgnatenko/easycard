@@ -64,6 +64,7 @@ const ChallengeBar: React.FC = () => {
         <ButtonWithIcon
           iconClass="flag"
           to="start-challenge"
+          additionalClass="challenge-bar__start-btn"
         >
           Start 42 Days Challenge
         </ButtonWithIcon>
@@ -71,6 +72,7 @@ const ChallengeBar: React.FC = () => {
         <ButtonWithIcon
           iconClass="flag"
           onClick={handleChallengeStart}
+          additionalClass="challenge-bar__start-btn"
         >
           Start 42 Days Challenge
         </ButtonWithIcon>

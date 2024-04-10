@@ -1,8 +1,13 @@
 .create-form {
-  @include flex-spb;
-  align-items: flex-start;
+  @include flex-center-column;
   gap: 24px;
   width: 100%;
+
+  @include onDesktop {
+    @include flex-spb;
+    flex-direction: row;
+    align-items: flex-start;
+  }
 
   &__wrapper {
     @include flex-center-column;
@@ -15,9 +20,15 @@
   }
 
   &__inputs {
-    @include flex-spb;
-    align-items: flex-start;
+    @include flex-center-column;
+    gap: 4px;
     width: 100%;
+
+    @include onDesktop {
+      @include flex-spb;
+      flex-direction: row;
+      align-items: flex-start;
+    }
   }
 
   &__input {
@@ -36,7 +47,13 @@
 
   &__buttons {
     @include flex-center;
+    justify-content: flex-end;
     gap: 16px;
+    width: 100%;
+
+    @include onDesktop {
+      width: fit-content;
+    }
   }
 
   &__save-btn {

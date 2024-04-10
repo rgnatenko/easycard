@@ -1,13 +1,13 @@
 .card {
-  @include flex-center;
-  justify-content: flex-start;
+  @include flex-spb;
   gap: 0;
 
   @include text-body;
   font-weight: 600;
 
   @include onDesktop {
-    justify-content: center;
+    @include flex-center;
+    gap: 0;
   }
 
   &__avatar {
@@ -57,34 +57,53 @@
     color: $text-secondary;
 
     &--rank {
-      width: 10%;
       justify-content: center;
+
+      @include onDesktop {
+        width: 10%;
+      }
     }
 
     &--name {
-      width: 40%;
       gap: 8px;
+
+      @include onDesktop {
+        width: 40%;
+      }
     }
 
     &--target {
-      width: 60%;
+
+      @include onDesktop {
+        width: 60%;
+      }
     }
 
     &--status {
-      width: 30%;
+
+      @include onDesktop {
+        width: 30%;
+      }
     }
 
     &--scan {
-      width: 30%;
+
+      @include onDesktop {
+        width: 30%;
+      }
     }
 
     &--taps {
-      width: 10%;
       justify-content: flex-end;
+
+      @include onDesktop {
+        width: 10%;
+      }
     }
 
     &--no-state {
       color: $text-disabled;
+      text-align: center;
     }
   }
 }

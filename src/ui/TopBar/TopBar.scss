@@ -1,9 +1,28 @@
 .top-bar {
-  @include flex-spb;
+  @include flex-center-column;
+  gap: 24px;
   width: 100%;
 
+  @include onDesktop {
+    @include flex-spb;
+    flex-direction: row;
+  }
+
   &__head {
-    @include flex-center-column;
-    align-items: flex-start;
+    @include flex-center;
+    justify-content: flex-start;
+    width: 100%;
+
+    @include onDesktop {
+      @include flex-center-column;
+      align-items: flex-start;
+      width: fit-content;
+    }
+  }
+
+  &__menu {
+    @include onTablet {
+      display: none;
+    }
   }
 }

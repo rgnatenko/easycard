@@ -1,21 +1,32 @@
 import React, { useState } from 'react';
+import cn from 'classnames';
 import { DropDownWithIcon } from '../../ui/DropDownWithIcon';
 import { BarItem } from '../../ui/BarItem';
 import { useProducts, useUser } from '../../redux/selectors';
 import { getLocationName } from '../../helpers/getLocationName';
 import ProductsList from '../../ui/ProductsList/ProductsList';
+import { Link } from 'react-router-dom';
 
-export const SideBar: React.FC = () => {
+type Props = {
+  visible?: boolean
+}
+
+export const SideBar: React.FC<Props> = ({ visible }) => {
   const { user } = useUser();
   const { selectedProduct, products } = useProducts();
   const locationName = getLocationName(selectedProduct);
 
   const [isOpenList, setIsOpenList] = useState(false);
 
+  const sideBarClass = cn('sidebar', {
+    'sidebar--opened-on-mobile': visible
+  });
+
   return (
-    <div className="sidebar">
+    <div className={sideBarClass}>
       <div className="sidebar__top">
         <h4 className='sidebar__user'>{user?.fullName}</h4>
+        <Link to="./../" className="icon icon--close sidebar__back-link" />
 
         {!products.length ? (
           <DropDownWithIcon

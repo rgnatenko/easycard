@@ -4,6 +4,9 @@
 
   &--width70 {
     @include flex-center;
-    width: 70%;
+
+    @include onDesktop {
+      width: 70%;
+    }
   }
 }

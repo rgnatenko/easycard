@@ -8,6 +8,7 @@ import { AuthForm } from './components/AuthForm';
 import { Logout } from './components/Logout';
 import LocationPopup from './components/LocationPopup/LocationPopup';
 import { ChallengePopup } from './components/ChallengePopup/ChallengePopup';
+import { SideBar } from './components/SideBar';
 
 export const Routing: React.FC = () => (
   <Router>
@@ -23,6 +24,8 @@ export const Routing: React.FC = () => (
           <Route path='connect-location' element={<LocationPopup />} />
           <Route path="start-challenge" element={<ChallengePopup />} />
         </Route>
+
+        <Route path='menu' element={<SideBar visible />} />
         <Route path="logout" element={<Logout />} />
       </Route>
 

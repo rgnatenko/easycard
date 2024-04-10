@@ -1,19 +1,40 @@
 .challenge-bar {
   position: relative;
-  @include flex-center;
+  @include flex-center-column;
   padding: 16px;
+  width: 100%;
 
   background-color: $c-warning-bg;
   @include border($c-accent);
   border-radius: $input-border-radius;
 
+  @include onDesktop {
+    @include flex-center;
+    flex-direction: row;;
+    width: fit-content;
+  }
+
   &--challenge-started {
     @include flex-center-column;
-    width: 50%;
+    width: 100%;
+
+    @include onDesktop {
+      width: 50%;
+    }
+  }
+
+  &__start-btn {
+    width: 100%;
+
+    @include onDesktop {
+      width: fit-content;
+    }
   }
 
   &__text {
-    width: 495px;
+    @include onDesktop {
+      width: 495px;
+    }
   }
 
   &__top {

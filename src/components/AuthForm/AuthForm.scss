@@ -1,6 +1,12 @@
 .authform {
-  grid-column: 9/17;
   @include flex-center-column;
+  grid-column: span 4;
+  padding: 30px;
+
+  @include onDesktop {
+    grid-column: 9/17;
+    padding: 0;
+  }
 
   &__inputs {
     @include flex-center-column;
@@ -20,5 +26,15 @@
     position: absolute;
     top: 25%;
     right: 2%;
+  }
+
+  &__btn {
+    width: 100%;
+    padding-block: 12px;
+
+    @include onDesktop {
+      width: fit-content;
+      @include input-padding;
+    }
   }
 }
