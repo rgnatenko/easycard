@@ -1,9 +1,9 @@
 import React from 'react';
-import { ConnectLocation } from '../ConnectLocation';
 import { useProducts } from '../../redux/selectors';
-import LeaderBoard from '../../ui/LeaderBoard/LeaderBoard';
+import ConnectLocation from '../ConnectLocation/ConnectLocation';
+import LeaderBoard from '../LeaderBoard/LeaderBoard';
 
-export const Board: React.FC = () => {
+const Board: React.FC = () => {
   const { products } = useProducts();
 
   if (!products.length) {
@@ -20,3 +20,5 @@ export const Board: React.FC = () => {
     </div>
   );
 };
+
+export default Board;

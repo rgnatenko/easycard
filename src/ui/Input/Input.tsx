@@ -12,7 +12,7 @@ type Props = {
   required?: boolean
 }
 
-export const Input: React.FC<Props> = ({
+const Input: React.FC<Props> = ({
   classToAdd,
   register,
   placeholder,
@@ -32,3 +32,5 @@ export const Input: React.FC<Props> = ({
     />
   );
 };
+
+export default Input;

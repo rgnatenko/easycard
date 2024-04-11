@@ -1,14 +1,14 @@
 import { Navigate, Route, HashRouter as Router, Routes } from 'react-router-dom';
 import App from './App';
 import React from 'react';
-import { MainInterface } from './components/MainInterface';
 import { Provider } from 'react-redux';
 import store from './redux/store/store';
-import { AuthForm } from './components/AuthForm';
-import { Logout } from './components/Logout';
 import LocationPopup from './components/LocationPopup/LocationPopup';
-import { ChallengePopup } from './components/ChallengePopup/ChallengePopup';
-import { SideBar } from './components/SideBar';
+import AuthForm from './components/AuthForm/AuthForm';
+import ChallengePopup from './components/ChallengePopup/ChallengePopup';
+import Logout from './components/Logout/Logout';
+import MainInterface from './components/MainInterface/MainInterface';
+import SideBar from './components/SideBar/SideBar';
 
 export const Routing: React.FC = () => (
   <Router>

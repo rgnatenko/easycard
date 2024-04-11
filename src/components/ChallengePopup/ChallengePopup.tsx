@@ -1,11 +1,13 @@
 import React from 'react';
-import { Popup } from '../../ui/Popup';
-import ChallengePopupInfo from '../../ui/ChallengePopupInfo/ChallengePopupInfo';
+import ChallengePopupInfo from '../ChallengePopupInfo/ChallengePopupInfo';
+import Popup from '../../ui/Popup/Popup';
 
-export const ChallengePopup: React.FC = () => {
+const ChallengePopup: React.FC = () => {
   return (
     <Popup>
       <ChallengePopupInfo />
     </Popup>
   );
 };
+
+export default ChallengePopup;

@@ -1,6 +1,6 @@
 import React from 'react';
-import { Popup } from '../../ui/Popup';
-import { LocationPopupInfo } from '../../ui/LocationPopupInfo';
+import { LocationPopupInfo } from '../LocationPopupInfo';
+import Popup from '../../ui/Popup/Popup';
 
 const LocationPopup: React.FC = () => (
   <Popup>

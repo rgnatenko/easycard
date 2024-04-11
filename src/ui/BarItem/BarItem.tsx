@@ -9,7 +9,7 @@ type Props = {
   to: string
 }
 
-export const BarItem: React.FC<Props> = ({ children, iconClass, to }) => {
+const BarItem: React.FC<Props> = ({ children, iconClass, to }) => {
   const { pathname } = useLocation();
 
   const barItemClass = ({ isActive }: { isActive: boolean }) => {
@@ -29,3 +29,5 @@ export const BarItem: React.FC<Props> = ({ children, iconClass, to }) => {
     </NavLink>
   );
 };
+
+export default BarItem;

@@ -8,7 +8,7 @@ type Props = {
   location: Location
 }
 
-export const LocationItem: React.FC<Props> = ({ location }) => {
+const LocationItem: React.FC<Props> = ({ location }) => {
   const normalizedText = normalizeTextLength(location.display_name, 5, '...');
   const dispatch = useAppDispatch();
 
@@ -28,3 +28,5 @@ export const LocationItem: React.FC<Props> = ({ location }) => {
     </button>
   );
 };
+
+export default LocationItem;

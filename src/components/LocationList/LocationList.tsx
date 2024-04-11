@@ -1,20 +1,22 @@
 import React from 'react';
 import { Location } from '../../types/Location';
-import { LocationItem } from '../../ui/LocationItem';
 import { useLocations } from '../../redux/selectors';
-import { Loader } from '../../ui/Loader/Loader';
+import Loader from '../../ui/Loader/Loader';
+import LocationItem from '../../ui/LocationItem/LocationItem';
 
 type Props = {
   locations: Location[]
 }
 
-export const LocationList: React.FC<Props> = ({ locations }) => {
+const LocationList: React.FC<Props> = ({ locations }) => {
   const { locatiansAreLoading } = useLocations();
 
   if (locatiansAreLoading) {
-    return <div className="locationList">
-      <Loader />
-    </div>;
+    return (
+      <div className="locationList">
+        <Loader />
+      </div>
+    );
   }
 
   if (locations.length) {
@@ -36,3 +38,5 @@ export const LocationList: React.FC<Props> = ({ locations }) => {
     </div>
   );
 };
+
+export default LocationList;

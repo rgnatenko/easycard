@@ -5,8 +5,10 @@ type Props = {
   additionClass?: string
 }
 
-export const Hint: React.FC<Props> = ({ children, additionClass }) => (
+const Hint: React.FC<Props> = ({ children, additionClass }) => (
   <div className={`hint ${additionClass}`}>
     {children}
   </div>
 );
+
+export default Hint;

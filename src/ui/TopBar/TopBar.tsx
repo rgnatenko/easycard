@@ -1,9 +1,9 @@
 import React from 'react';
-import ChallengeBar from '../ChallengeBar/ChallengeBar';
+import ChallengeBar from '../../components/ChallengeBar/ChallengeBar';
 import { useProducts } from '../../redux/selectors';
 import { Link } from 'react-router-dom';
 
-export const TopBar: React.FC = () => {
+const TopBar: React.FC = () => {
   const { products } = useProducts();
 
   return (
@@ -23,3 +23,5 @@ export const TopBar: React.FC = () => {
     </div>
   );
 };
+
+export default TopBar;

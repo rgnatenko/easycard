@@ -1,5 +1,5 @@
 .logout {
-  grid-column: 12/18;
+  grid-column: span 4;
   @include flex-center-column;
 
   @include text-body;
@@ -7,9 +7,27 @@
 
   background-color: $c-white;
 
+  @include onTablet {
+    grid-column: span 12;
+  }
+
+  @include onDesktop {
+    grid-column: 12/18;
+  }
+
+  &__buttons {
+    @include flex-center;
+  }
+
   &__btn {
     background-color: $c-info;
 
     @include hover(background-color, $c-info-hover);
+  }
+
+  &__btn-cancel {
+    @include onDesktop {
+      display: none;
+    }
   }
 }

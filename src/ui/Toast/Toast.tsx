@@ -1,5 +1,6 @@
 import React, { ReactNode } from 'react';
 import cn from 'classnames';
+import IconButton from '../IconButton/IconButton';
 
 type Props = {
   type: 'successfull' | 'warning',
@@ -28,8 +29,8 @@ const Toast: React.FC<Props> = ({ type, onClick, children }) => {
 
       <p className="text-body toast__message">{children}</p>
 
-      <button
-        className="icon icon--close"
+      <IconButton
+        iconClass="close"
         onClick={onClick}
       />
     </div>

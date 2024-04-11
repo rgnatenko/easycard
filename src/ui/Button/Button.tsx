@@ -10,7 +10,7 @@ type Props = {
   onClick?: (arg: any) => void
 };
 
-export const Button: React.FC<Props> = ({
+const Button: React.FC<Props> = ({
   children,
   btnType,
   type,
@@ -30,3 +30,5 @@ export const Button: React.FC<Props> = ({
     </button>
   );
 };
+
+export default Button;

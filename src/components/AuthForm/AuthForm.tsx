@@ -5,13 +5,16 @@ import { SubmitHandler, useForm } from 'react-hook-form';
 import { User } from '../../types/User';
 import { useAppDispatch } from '../../redux/hooks';
 import { useDataFromStorage } from '../../helpers/useDataFromStorage';
-import { Button } from '../../ui/Button';
+import {  } from '../../ui/Button';
 import { useNavigate } from 'react-router-dom';
 import { setUser } from '../../redux/features/user';
 import { UserInputs } from '../../types/FieldValues/UserInputs';
-import { Input } from '../../ui/Input';
+import { useUser } from '../../redux/selectors';
+import IconButton from '../../ui/IconButton/IconButton';
+import Button from '../../ui/Button/Button';
+import Input from '../../ui/Input/Input';
 
-export const AuthForm: React.FC = () => {
+const AuthForm: React.FC = () => {
   const [openedPassword, setOpenedPassword] = useState(false);
 
   const dispatch = useAppDispatch();
@@ -19,14 +22,13 @@ export const AuthForm: React.FC = () => {
 
   const { register, handleSubmit, formState: { errors } } = useForm<UserInputs>();
 
-  const userFromStorage = useDataFromStorage.getUser();
+  const { user } = useUser();
 
   const onSubmit: SubmitHandler<UserInputs> = (data) => {
     const user: User = { ...data, products: [] };
 
     dispatch(setUser(user));
-    useDataFromStorage.setUser(user);
-    useDataFromStorage.setIsAuthorized(true);
+    useDataFromStorage.authorize({ user, isAuthorized: true });
 
     navigate('/');
   };
@@ -40,7 +42,7 @@ export const AuthForm: React.FC = () => {
             register={register}
             name="fullName"
             placeholder='Full Name'
-            value={userFromStorage?.fullName}
+            value={user?.fullName}
             required
           />
 
@@ -53,16 +55,17 @@ export const AuthForm: React.FC = () => {
               name="password"
               placeholder='Password'
               type={!openedPassword ? 'password' : 'text'}
-              value={userFromStorage?.password}
+              value={user?.password}
               required
             />
 
-            <button
+            <IconButton
               type='button'
-              className={cn('icon authform__icon', {
-                'icon--eye-off': !openedPassword,
-                'icon icon--eye': openedPassword
+              iconClass={cn({
+                'eye-off': !openedPassword,
+                'eye': openedPassword
               })}
+              classToAdd="authform__icon"
               onClick={() => setOpenedPassword(!openedPassword)}
             />
           </div>
@@ -75,9 +78,11 @@ export const AuthForm: React.FC = () => {
           type="submit"
           additionalClass='authform__btn'
         >
-          {userFromStorage ? 'Log in' : 'Sign up'}
+          {user ? 'Log in' : 'Sign up'}
         </Button>
       </form>
     </div>
   );
 };
+
+export default AuthForm;

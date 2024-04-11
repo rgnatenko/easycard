@@ -8,6 +8,7 @@ type Props = {
   onPageChange: ({ selected }: { selected: number; }) => void,
   activeLinkClassName?: string
   containerClassName?: string
+  forcePage?: number
 }
 
 const Pagination: React.FC<Props> = ({
@@ -16,7 +17,8 @@ const Pagination: React.FC<Props> = ({
   marginPagesDisplayed,
   onPageChange,
   activeLinkClassName,
-  containerClassName
+  containerClassName,
+  forcePage
 }) => {
   return (
     <ReactPaginate
@@ -30,6 +32,7 @@ const Pagination: React.FC<Props> = ({
       previousLinkClassName="icon icon--left"
       nextLabel=""
       previousLabel=""
+      forcePage={forcePage}
     />
   );
 };

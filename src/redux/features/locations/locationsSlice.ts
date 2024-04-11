@@ -2,6 +2,7 @@ import { PayloadAction, createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import { LocationState } from '../../../types/State/LocationState';
 import fetchLocation from '../../../fetchLocation/fetchLocation';
 import { Location } from '../../../types/Location';
+import { addProduct } from '../products';
 
 const initialState: LocationState = {
   selectedLocation: null,
@@ -39,11 +40,17 @@ export const locationsSlice = createSlice({
   extraReducers: (builder) => {
     builder.addCase(initLocation.pending, state => {
       state.locatiansAreLoading = true;
+      state.selectedLocation = null;
     });
 
     builder.addCase(initLocation.fulfilled, (state, action) => {
       state.locatiansAreLoading = false;
       state.locations = action.payload;
+    });
+
+    builder.addCase(addProduct.fulfilled, state => {
+      state.selectedLocation = null;
+      state.customName = '';
     });
   }
 });

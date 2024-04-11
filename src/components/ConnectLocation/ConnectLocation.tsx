@@ -1,9 +1,9 @@
 
 import React from 'react';
-import { ButtonWithIcon } from '../../ui/ButtonWithIcon';
 import { Link } from 'react-router-dom';
+import ButtonWithIcon from '../../ui/ButtonWithIcon/ButtonWithIcon';
 
-export const ConnectLocation: React.FC = () => (
+const ConnectLocation: React.FC = () => (
   <div className="connect-board" >
     <div className="connect-board__head">
       <img src="location.png" alt="" />
@@ -22,3 +22,5 @@ export const ConnectLocation: React.FC = () => (
   </div>
 
 );
+
+export default ConnectLocation;

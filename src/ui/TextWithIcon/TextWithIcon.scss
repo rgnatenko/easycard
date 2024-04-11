@@ -5,6 +5,10 @@
   &--width70 {
     @include flex-center;
 
+    @include onTablet {
+      justify-content: flex-start;
+    }
+
     @include onDesktop {
       width: 70%;
     }

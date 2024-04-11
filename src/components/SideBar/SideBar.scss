@@ -15,6 +15,10 @@
     grid-column: span 4;
     width: 100%;
     padding: 50px;
+
+    @include onTablet {
+      grid-column: span 12;
+    }
   }
 
   &__top {

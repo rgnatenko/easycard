@@ -7,31 +7,30 @@
 @import './styles/input/input.scss';
 
 @import './ui/DropDownWithIcon/DropDownWithIcon.scss';
-@import './ui/Dropdown/Dropdown.scss';
 @import './ui/BarItem/BarItem.scss';
 @import './ui/TopBar/TopBar.scss';
 @import './ui/ButtonWithIcon/ButtonWithIcon.scss';
 @import './ui/Button/Button.scss';
 @import './ui/TextWithIcon/TextWithIcon.scss';
 @import './ui/Popup/Popup.scss';
-@import './ui/LocationPopupInfo/LocationPopupInfo.scss';
 @import './ui/LocationItem/LocationItem.scss';
 @import './ui/Hint/Hint.scss';
 @import './ui/Loader/Loader.scss';
-@import './ui/ChallengeBar/ChallengeBar.scss';
-@import './ui/ProductsTable/ProductsTable.scss';
-@import './ui/LeaderBoard/LeaderBoard.scss';
 @import './ui/SuccessfullPopup/SuccessfullPopup.scss';
-@import './ui/CreateForm/CreateForm.scss';
-@import './ui/ProductsList/ProductsList.scss';
 @import './ui/Toast/Toast.scss';
-@import './ui/ChallengePopupInfo/ChallengePopupInfo.scss';
 
 @import './components/SideBar/SideBar.scss';
 @import './components/Board/Board.scss';
 @import './components/MainInterface/MainInterface.scss';
 @import './components/AuthForm/AuthForm.scss';
 @import './components/Logout/Logout.scss';
+@import './components/LeaderBoard/LeaderBoard.scss';
+@import './components/CreateForm/CreateForm.scss';
+@import './components/ChallengeBar/ChallengeBar.scss';
+@import './components/ProductsTable/ProductsTable.scss';
+@import './components/LocationPopupInfo/LocationPopupInfo.scss';
+@import './components/ChallengePopupInfo/ChallengePopupInfo.scss';
+@import './components/ProductsList/ProductsList.scss';
 @import './components/LocationList/LocationList.scss';
 
 .App {

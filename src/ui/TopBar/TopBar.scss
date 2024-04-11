@@ -21,7 +21,7 @@
   }
 
   &__menu {
-    @include onTablet {
+    @include onDesktop {
       display: none;
     }
   }

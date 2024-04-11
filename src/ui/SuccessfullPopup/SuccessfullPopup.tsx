@@ -1,8 +1,8 @@
 import React from 'react';
-import { Button } from '../Button';
-import { Hint } from '../Hint';
+import Button from '../../ui/Button/Button';
 import { useAppDispatch } from '../../redux/hooks';
 import { setIsFirstProduct } from '../../redux/features/products';
+import Hint from '../Hint/Hint';
 
 const SuccessfullPopupGuide: React.FC = () => {
   const dispatch = useAppDispatch();

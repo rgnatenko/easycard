@@ -3,6 +3,7 @@ import { Product } from '../types/Product';
 import { User } from '../types/User';
 import getDataFromStorage from './getDataFromStorage';
 import { setDataToStorage } from './setDataToStorage';
+import { updateElementInArray } from './updateElementInArray';
 
 const getUser = () => getDataFromStorage<User, null>('user', null);
 
@@ -10,6 +11,16 @@ const setUser = (user: User) => setDataToStorage('user', user);
 
 const getIsAuthorized = () => getDataFromStorage<boolean, boolean>('isAuthorized', false);
 const setIsAuthorized = (isAuthorized: boolean) => setDataToStorage('isAuthorized', isAuthorized);
+
+interface AuthorizeArgs {
+  user: User,
+  isAuthorized: boolean
+}
+
+const authorize = ({user, isAuthorized}: AuthorizeArgs) => {
+  useDataFromStorage.setUser(user);
+  useDataFromStorage.setIsAuthorized(isAuthorized);
+};
 
 const getProducts = () => getUser()?.products || [];
 
@@ -46,12 +57,7 @@ const addCard = (card: Card) => {
     const user = getUser();
 
     if (user) {
-      const productsToSet = user.products
-        .map(product => product.id === productToSet.id
-          ? productToSet
-          : product);
-
-      user.products = productsToSet;
+      user.products = updateElementInArray<Product, Product>(user.products, productToSet);
 
       setSelectedProduct(productToSet);
       setUser(user);
@@ -71,12 +77,7 @@ const updateCard = (updatedCards: Card[]) => {
     const user = getUser();
 
     if (user) {
-      const productsToSet = user.products
-        .map(product => product.id === productToSet.id
-          ? productToSet
-          : product);
-
-      user.products = productsToSet;
+      user.products = updateElementInArray<Product, Product>(user.products, productToSet);
 
       setSelectedProduct(productToSet);
       setUser(user);
@@ -92,6 +93,7 @@ export const useDataFromStorage = {
   setUser,
   getIsAuthorized,
   setIsAuthorized,
+  authorize,
   getProducts,
   getSelectedProduct,
   setSelectedProduct,

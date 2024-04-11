@@ -1,0 +1,56 @@
+.head {
+  &__row {
+    @include flex-center;
+    justify-content: flex-start;
+    width: 100%;
+    gap: 0;
+
+    @include onDesktop {
+    }
+  }
+
+  &__column {
+    @include flex-center;
+    justify-content: flex-start;
+    padding: 16px;
+
+    @include text-body;
+    font-weight: 600;
+
+    &--rank {
+      justify-content: center;
+
+      width: 10%;
+      @include onTablet {
+        width: 10%;
+      }
+    }
+
+    &--name {
+      width: 60%;
+      @include onTablet {
+        width: 40%;
+      }
+    }
+
+    &--target {
+      width: 30%;
+      @include onTablet {
+        width: 60%;
+      }
+    }
+
+    &--status {
+      width: 30%;
+    }
+
+    &--scan {
+      width: 30%;
+    }
+
+    &--taps {
+      width: 10%;
+      justify-content: flex-end;
+    }
+  }
+}

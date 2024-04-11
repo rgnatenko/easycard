@@ -9,7 +9,7 @@ type Props = {
   to?: string
 };
 
-export const DropDownWithIcon: React.FC<Props> = ({
+const DropDown: React.FC<Props> = ({
   iconClass,
   children,
   iconDownIsNeeded,
@@ -20,14 +20,14 @@ export const DropDownWithIcon: React.FC<Props> = ({
     return (
       <Link
         to={to}
-        className="dropdownWithIcon"
+        className="dropdown"
       >
-        <div className="dropdownWithIcon__info">
-          <div className="dropdownWithIcon__info-icon icon">
+        <div className="dropdown__info">
+          <div className="dropdown__info-icon icon">
             <div className={`icon icon--${iconClass}`} />
           </div>
 
-          <p className="text-body dropdownWithIcon__info-text">{children}</p>
+          <p className="text-body dropdown__info-text">{children}</p>
         </div>
 
         {iconDownIsNeeded && <div className="icon icon--down" />}
@@ -37,18 +37,20 @@ export const DropDownWithIcon: React.FC<Props> = ({
 
   return (
     <button
-      className="dropdownWithIcon"
+      className="dropdown"
       onClick={onClick}
     >
-      <div className="dropdownWithIcon__info">
-        <div className="dropdownWithIcon__info-icon icon">
+      <div className="dropdown__info">
+        <div className="dropdown__info-icon icon">
           <div className={`icon icon--${iconClass}`} />
         </div>
 
-        <p className="text-body dropdownWithIcon__info-text">{children}</p>
+        <p className="text-body dropdown__info-text">{children}</p>
       </div>
 
       {iconDownIsNeeded && <div className="icon icon--down" />}
     </button>
   );
 };
+
+export default DropDown;

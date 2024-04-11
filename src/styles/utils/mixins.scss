@@ -178,8 +178,11 @@
 
 @mixin button-secondary {
   @include flex-center;
+  padding: 8px 10px;
 
-  @include input-padding;
+  @include onDesktop {
+    @include input-padding;
+  }
 
   @include text-body;
 

@@ -1,22 +1,26 @@
 import React, { ReactNode } from 'react';
-import { Link } from 'react-router-dom';
+import IconButton from '../IconButton/IconButton';
 
 type Props = {
   children: ReactNode,
   iconClass: string,
   classToAdd?: string
-  to?: string
+  to?: string,
+  onClick?: () => void
 }
 
-export const TextWithIcon: React.FC<Props> = ({ children, iconClass, classToAdd, to }) => {
+const TextWithIcon: React.FC<Props> = ({ children, iconClass, classToAdd, to, onClick }) => {
   return (
     <div className={`text-with-icon ${classToAdd}`}>
       {children}
-      {!to && <button className={`icon icon--${iconClass}`} />}
-      {to && (<Link
+
+      <IconButton
+        iconClass={iconClass}
         to={to}
-        className={`icon icon--${iconClass}`}
-      />)}
+        onClick={onClick}
+      />
     </div>
   );
 };
+
+export default TextWithIcon;

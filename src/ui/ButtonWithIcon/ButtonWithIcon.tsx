@@ -1,5 +1,6 @@
 import React, { ReactNode } from 'react';
 import { Link } from 'react-router-dom';
+import IconButton from '../IconButton/IconButton';
 
 type Props = {
   iconClass: string,
@@ -10,7 +11,7 @@ type Props = {
   to?: string
 };
 
-export const ButtonWithIcon: React.FC<Props> = ({ iconClass,
+const ButtonWithIcon: React.FC<Props> = ({ iconClass,
   children,
   additionalClass,
   onClick,
@@ -24,19 +25,22 @@ export const ButtonWithIcon: React.FC<Props> = ({ iconClass,
         className={`btnWithIcon ${additionalClass}`}
         onClick={onClick}
       >
-        <div className={`icon icon--${iconClass}`} />
+        <IconButton iconClass={iconClass}/>
         {children}
       </Link>
     );
   }
+
   return (
     <button
       className={`btnWithIcon ${additionalClass}`}
       onClick={onClick}
       type={type}
     >
-      <div className={`icon icon--${iconClass}`} />
+      <IconButton iconClass={iconClass}/>
       {children}
     </button>
   );
 };
+
+export default ButtonWithIcon;

@@ -1,11 +1,11 @@
 import React from 'react';
-import { TopBar } from '../../ui/TopBar';
-import { Board } from '../Board';
 import SuccessfullPopupGuide from '../../ui/SuccessfullPopup/SuccessfullPopup';
 import { useProducts } from '../../redux/selectors';
 import { Outlet } from 'react-router-dom';
+import Board from '../Board/Board';
+import TopBar from '../../ui/TopBar/TopBar';
 
-export const MainInterface: React.FC = () => {
+const MainInterface: React.FC = () => {
   const { isfirstProduct } = useProducts();
 
   return (
@@ -20,3 +20,5 @@ export const MainInterface: React.FC = () => {
     </div>
   );
 };
+
+export default MainInterface;

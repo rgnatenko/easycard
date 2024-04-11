@@ -1,17 +1,17 @@
 import React, { useState } from 'react';
 import cn from 'classnames';
-import { DropDownWithIcon } from '../../ui/DropDownWithIcon';
-import { BarItem } from '../../ui/BarItem';
 import { useProducts, useUser } from '../../redux/selectors';
 import { getLocationName } from '../../helpers/getLocationName';
-import ProductsList from '../../ui/ProductsList/ProductsList';
+import ProductsList from '../ProductsList/ProductsList';
 import { Link } from 'react-router-dom';
+import DropDown from '../../ui/DropDownWithIcon/DropDownWithIcon';
+import BarItem from '../../ui/BarItem/BarItem';
 
 type Props = {
   visible?: boolean
 }
 
-export const SideBar: React.FC<Props> = ({ visible }) => {
+const SideBar: React.FC<Props> = ({ visible }) => {
   const { user } = useUser();
   const { selectedProduct, products } = useProducts();
   const locationName = getLocationName(selectedProduct);
@@ -28,21 +28,23 @@ export const SideBar: React.FC<Props> = ({ visible }) => {
         <h4 className='sidebar__user'>{user?.fullName}</h4>
         <Link to="./../" className="icon icon--close sidebar__back-link" />
 
-        {!products.length ? (
-          <DropDownWithIcon
+        {!products.length && (
+          <DropDown
             iconClass="location"
             to="/team/connect-location"
           >
             {locationName}
-          </DropDownWithIcon>
-        ) : (
-          <DropDownWithIcon
+          </DropDown>
+        )}
+
+        {products.length > 0 && (
+          <DropDown
             iconClass="location"
             iconDownIsNeeded
             onClick={() => setIsOpenList(!isOpenList)}
           >
             {locationName}
-          </DropDownWithIcon>
+          </DropDown>
         )}
 
 
@@ -61,3 +63,5 @@ export const SideBar: React.FC<Props> = ({ visible }) => {
     </div>
   );
 };
+
+export default SideBar;

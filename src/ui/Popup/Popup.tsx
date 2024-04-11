@@ -4,7 +4,7 @@ type Props = {
   children: ReactNode,
 }
 
-export const Popup: React.FC<Props> = ({ children }) => {
+const Popup: React.FC<Props> = ({ children }) => {
   return (
     <div className="popup__overlay">
       <div className="popup">
@@ -13,4 +13,6 @@ export const Popup: React.FC<Props> = ({ children }) => {
     </div>
   );
 };
+
+export default Popup;
 

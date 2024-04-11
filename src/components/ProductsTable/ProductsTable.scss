@@ -1,0 +1,32 @@
+@import './TableBody/TableBody.scss';
+@import './TableHead/TableHead.scss';
+@import './CardItem/CardItem.scss';
+
+.products-table {
+  width: 100%;
+
+  &__divider {
+    border-bottom: 1px solid $input-border;
+    width: 100%;
+  }
+
+  &__head {
+    @include flex-center;
+    justify-content: flex-start;
+    width: 600px;
+
+    @include onTablet {
+      width: 100%;
+    }
+  }
+
+  &__body {
+    display: block;
+    width: 100%;
+    max-height: 300px;
+
+    @include onDesktop {
+      overflow-y: auto;
+    }
+  }
+}
