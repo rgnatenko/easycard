@@ -14,7 +14,7 @@ export const daysSinceAndStatus = () => {
     setDataToStorage('startDate', currentDate);
   }
 
-  const differenceMs = Number(currentDate) - Number(givenDate);
+  const differenceMs = Number(givenDate) - Number(currentDate);
 
   const daysPassed = Math.ceil(differenceMs / (1000 * 60 * 60 * 24)) + 1;
 
